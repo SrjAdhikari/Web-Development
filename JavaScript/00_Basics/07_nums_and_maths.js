@@ -165,10 +165,20 @@
     //* Syntax -> Math.random()
 
     console.log(Math.random());         // Expected Output -> A number from 0 to <1
+
+    // Generate a random floating-point number between 0 (inclusive) and 10 (exclusive)
     console.log(Math.random() * 10);
+
+    // Generate a random floating-point number between 1 (inclusive) and 11 (exclusive)
     console.log((Math.random() * 10) + 1);
+
+    // Generate a random integer between 1 (inclusive) and 10 (inclusive)
     console.log(Math.floor(Math.random() * 10) + 1);
 
     const min = 10;
     const max = 20;
     console.log(Math.floor(Math.random() * (max - min + 1)) + min);
+    // Generate a random integer between min (inclusive) and max (inclusive)
+    // Math.random() * (max - min + 1) generates a floating-point number between 0 (inclusive) and (max - min + 1) (exclusive)
+    // Math.floor rounds down the result to the nearest integer
+    // Adding min shifts the range to be between min and max
