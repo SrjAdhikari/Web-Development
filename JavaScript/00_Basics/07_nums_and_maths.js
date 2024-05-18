@@ -164,7 +164,8 @@
     //* 9. The Math.random() -> Returns a floating-point, pseudo-random number that's greater than or equal to 0 and less than 1, with approximately uniform distribution over that range — which you can then scale to your desired range.
     //* Syntax -> Math.random()
 
-    console.log(Math.random());         // Expected Output -> A number from 0 to <1
+    // Returns a random number between 0 (inclusive),  and 1 (exclusive):
+    console.log(Math.random());
 
     // Generate a random floating-point number between 0 (inclusive) and 10 (exclusive)
     console.log(Math.random() * 10);
