@@ -141,6 +141,6 @@
     console.log("Splice : ", applySplice);              // Output -> Splice :  [ 1, 2, 3 ]
     console.log("Array after splice : ", numberArray);  // Output -> Array after splice :  [ 0, 4, 5 ]
 
-    //* Interview question : Different between slice() & splice()
+    //* Interview Question : Different between slice() & splice()
     //* slice() : Does not modify the original array. Returns a new array with the selected elements.
     //* splice() : Modifies the original array. Returns an array of the removed elements.
