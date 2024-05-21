@@ -57,8 +57,11 @@
 
     // Function Creation
     function getArrayValue(getValue){
-        return getValue[2];        // Access array 2nd index value using function
+        return getValue[2];                                 // Access array 2nd index value using function
     }
 
-    // Function call 
-    console.log(getArrayValue(array));      // Output -> 30
+    // First create an array "array" and then pass it while calling a function.
+    console.log(getArrayValue(array));                      // Output -> 30  =>  Array 2nd index value is 30
+
+    // Directly passing an array while calling a function.
+    console.log(getArrayValue([100, 200, 500, 300]));        // Output -> 500  =>  Array 2nd index value is 500
