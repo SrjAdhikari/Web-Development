@@ -1,5 +1,5 @@
 //* ****************************************************
-//* Comparison In JavaaScript
+//* Comparison In JavaScript
 //* ****************************************************
 
 console.log("2" > 1);       // Output -> true   -> It's not a good practice. Always ensure that both values are of the same datatype.

@@ -1,5 +1,5 @@
 //* ****************************************************
-//* Datatype Conversion In JavaaScript
+//* Datatype Conversion In JavaScript
 //* ****************************************************
 
 

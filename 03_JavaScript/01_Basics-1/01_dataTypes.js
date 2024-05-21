@@ -1,7 +1,7 @@
 "use strIct";  // Treat all JavaScript code as newer veRsion.
 
 //* ****************************************************
-//* Datatypes In JavaaScript
+//* Datatypes In JavaScript
 //* ****************************************************
 
 
