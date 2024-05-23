@@ -27,7 +27,7 @@
         let power = 'Fly';
         console.log(`User Power : ${power}`);       // Output -> User Power : Fly
     }
-    //console.log(`User Power : ${power}`);           // Throw an error because the scope of 'power' is only inside the if condition.
+    //console.log(`User Power : ${power}`);         // Throw an error because the scope of 'power' is only inside the if condition.
 
 //* **********************************************************************
 
