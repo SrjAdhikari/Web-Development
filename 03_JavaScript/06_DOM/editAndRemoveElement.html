@@ -1,0 +1,53 @@
+<!--* **************************************************** -->
+<!--*  Edit And Remove Element In DOM -->
+<!--* **************************************************** -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // Function that create new "li" element and add that element to "ul"
+    function addLanguage(langName){
+        const list = document.createElement('li')
+        list.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(list)
+    }
+    addLanguage("C++")
+    addLanguage("Java")
+
+
+    // Optimize Function -> Recommanded
+    function addOptLanguage(langName){
+        const list = document.createElement('li')
+        list.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(list)
+    }
+    addOptLanguage("HTML")
+    addOptLanguage("PHP")
+
+    // Edit / Replace second value
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "CSS"
+    const newList = document.createElement('li')
+    newList.textContent = "CSS"
+    secondLang.replaceWith(newList)
+
+     // Edit / Replace first value
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    // Remove first value
+    const lastLang = document.querySelector('li:first-child')
+    lastLang.remove()
+
+</script>
+</html>
