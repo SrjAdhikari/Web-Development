@@ -84,3 +84,29 @@
     coding.forEach( (item, index) =>{
         console.log(item, index);
     })
+    console.log(`\n`); 
+
+
+    //* ****************************************************
+
+
+    //* Array with objects
+    const array = [
+        {
+            languageName : "JavaScript",
+            languageFileName : "js"
+        },
+        {
+            languageName : "C++",
+            languageFileName : "cpp"
+        },
+        {
+            languageName : "Python",
+            languageFileName : "py"
+        }
+    ]
+
+    // Access the object that is in the array
+    array.forEach( (item) => {
+        console.log(item.languageName);
+    })
