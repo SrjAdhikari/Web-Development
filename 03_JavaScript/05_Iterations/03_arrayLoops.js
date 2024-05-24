@@ -90,7 +90,7 @@
     //* ****************************************************
 
 
-    //* Array with objects
+    //* Array of objects
     const array = [
         {
             languageName : "JavaScript",
