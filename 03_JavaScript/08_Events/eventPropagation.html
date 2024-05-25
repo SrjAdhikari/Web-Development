@@ -1,0 +1,63 @@
+<!--* Event propagation in JavaScript is the process by which an event moves through the Document Object Model (DOM) hierarchy. Understanding event propagation is crucial for effective event handling in web development. 
+
+<!--* There are three main phases of event propagation:
+
+<!--* 1. Capturing Phase (Capture Phase) : The event starts from the root of the DOM and travels down to the target element.
+<!--* 2. Target Phase: The event reaches the target element. -->
+<!--* 3. Bubbling Phase (Bubble Phase): The event starts from the target element and bubbles up to the root of the DOM.
+
+<!--* Event Propagation Phases -->
+
+<!--* Capturing Phase: The event traverses from the document root to the target element. During this phase, event listeners set with addEventListener using the capture option set to true will be triggered. -->
+<!--* Target Phase: The event reaches the target element. Event listeners on the target element itself are triggered. -->
+<!--* Bubbling Phase: The event bubbles back up from the target element to the document root. Event listeners set with addEventListener using the default capture option (false) will be triggered. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation Example</title>
+</head>
+<body>
+    <div id="outer" style="padding: 20px; background-color: lightblue;">
+        Outer Div
+        <div id="inner" style="padding: 20px; background-color: lightcoral;">
+        Inner Div
+        <button id="button">Click Me</button>
+        </div>
+    </div>
+
+    <script>
+        const outerDiv = document.getElementById('outer');
+        const innerDiv = document.getElementById('inner');
+        const button = document.getElementById('button');
+
+        // Event listener for capturing phase
+        outerDiv.addEventListener('click', function(event) {
+            console.log('Outer Div (capturing phase)');
+        }, true);
+
+        // Event listener for bubbling phase
+        outerDiv.addEventListener('click', function(event) {
+            console.log('Outer Div (bubbling phase)');
+        });
+
+        // Event listener for capturing phase
+        innerDiv.addEventListener('click', function(event) {
+            console.log('Inner Div (capturing phase)');
+        }, true);
+
+        // Event listener for bubbling phase
+        innerDiv.addEventListener('click', function(event) {
+            console.log('Inner Div (bubbling phase)');
+        });
+
+        // Event listener for button
+        button.addEventListener('click', function(event) {
+            console.log('Button clicked');
+        });
+    </script>
+</body>
+</html>
