@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cart Quantity</title> <!-- Title of the webpage -->
+    </head>
+    <body>
+        <!--* Button to show the current cart quantity -->
+        <button onclick="
+        console.log(`Cart quantity: ${cartQuantity}`);
+        ">Show Quantity</button>
+
+
+        <!--* Button to add 1 item to the cart -->
+        <button onclick="
+        // Check if adding one more item exceeds the limit of 10
+        if (cartQuantity + 1 > 10) {
+            alert('The cart is full');                          // Alert if the cart is full
+        } else {
+            cartQuantity++;                                     // Increment cart quantity by 1
+            console.log(`Cart quantity: ${cartQuantity}`);      // Log the new cart quantity
+        }
+        ">Add to Cart</button>
+
+
+        <!--* Button to add 2 items to the cart -->
+        <button onclick="
+        // Check if adding two more items exceeds the limit of 10
+        if (cartQuantity + 2 > 10) {
+            alert('The cart is full');                          // Alert if the cart is full
+        } else {
+            cartQuantity += 2;                                  // Increment cart quantity by 2
+            console.log(`Cart quantity: ${cartQuantity}`);      // Log the new cart quantity
+        }
+        ">+2</button>
+
+
+        <!--* Button to add 3 items to the cart -->
+        <button onclick="
+        // Check if adding three more items exceeds the limit of 10
+        if (cartQuantity + 3 > 10) {
+            alert('The cart is full');                          // Alert if the cart is full
+        } else {
+            cartQuantity = cartQuantity + 3;                    // Increment cart quantity by 3
+            console.log(`Cart quantity: ${cartQuantity}`);      // Log the new cart quantity
+        }
+        ">+3</button>
+
+
+        <!--* Button to add 4 items to the cart -->
+        <button onclick="
+        // Check if adding four more items exceeds the limit of 10
+        if (cartQuantity + 4 > 10) {
+            alert('The cart is full');                          // Alert if the cart is full
+        } else {
+            cartQuantity += 4;                                  // Increment cart quantity by 4
+            console.log(`Cart quantity: ${cartQuantity}`);      // Log the new cart quantity
+        }
+        ">+4</button>
+
+
+        <!--* Button to add 5 items to the cart -->
+        <button onclick="
+        // Check if adding five more items exceeds the limit of 10
+        if (cartQuantity + 5 > 10) {
+            alert('The cart is full');                          // Alert if the cart is full
+        } else {
+            cartQuantity += 5;                                  // Increment cart quantity by 5
+            console.log(`Cart quantity: ${cartQuantity}`);      // Log the new cart quantity
+        }
+        ">+5</button>
+
+
+        <!--* Button to remove 1 item from the cart -->
+        <button onclick="
+        cartQuantity--;                                     // Decrement cart quantity by 1
+        console.log(`Cart quantity: ${cartQuantity}`);      // Log the new cart quantity
+        ">Remove from cart</button>
+
+
+        <!--* Button to remove 2 items from the cart -->
+        <button onclick="
+        cartQuantity -= 2;                                  // Decrement cart quantity by 2
+        console.log(`Cart quantity: ${cartQuantity}`);      // Log the new cart quantity
+        ">-2</button>
+
+
+        <!--* Button to remove 3 items from the cart -->
+        <button onclick="
+        cartQuantity -= 3;                                  // Decrement cart quantity by 3
+        console.log(`Cart quantity: ${cartQuantity}`);      // Log the new cart quantity
+        ">-3</button>
+
+
+        <!--* Button to reset the cart quantity to 0 -->
+        <button onclick="
+        cartQuantity = 0;                                   // Reset cart quantity to 0
+        console.log('Cart was reset.');                     // Log that the cart was reset
+        console.log(`Cart quantity: ${cartQuantity}`);      // Log the new cart quantity
+        ">Reset Cart</button>
+
+
+        <!--* Script to initialize the cart quantity variable -->
+        <script>
+            let cartQuantity = 0;                           // Initialize cart quantity to 0
+        </script>
+
+    </body>
+</html>
