@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Length Converter</title>
+    </head>
+    <body>
+        <script>
+
+            function convertLength(length, from, to){
+
+                // Check for invalid input units
+                if (from !== 'km' && from !== 'miles' && from !== 'ft') {
+                    // Return an error message if 'from' unit is invalid
+                    return `Invalid unit: ${from}`;
+                } 
+                else if (to !== 'km' && to !== 'miles' && to !== 'ft') {
+                    // Return an error message if 'to' unit is invalid
+                    return `Invalid unit: ${to}`;
+                }
+
+                // Conversion logic based on 'from' and 'to' units
+                if (from === 'km' && to === 'miles') {
+                    // Convert kilometers to miles and return the result
+                    return `${length / 1.6} ${to}`;
+                } 
+                else if (from === 'km' && to === 'ft') {
+                    // Convert kilometers to feet and return the result
+                    return `${length * 3281} ${to}`;  
+                } 
+                else if (from === 'miles' && to === 'km') {
+                    // Convert miles to kilometers and return the result
+                    return `${length * 1.6} ${to}`;
+                }
+                else if (from === 'miles' && to === 'ft') {
+                    // Convert miles to feet and return the result
+                    return `${length * 5280} ${to}`;
+                } 
+                else if (from === 'ft' && to === 'km') {
+                    // Convert feet to kilometers and return the result
+                    return `${length / 3281} ${to}`;
+                } 
+                else if (from === 'ft' && to === 'miles') {
+                    // Convert feet to miles and return the result
+                    return `${length / 5280} ${to}`;
+                } 
+                else if (from === to) {
+                    // If 'from' and 'to' units are identical, return the original length with the unit
+                    return `${length} ${to}`;
+                }
+            }
+
+            console.log(convertLength(50, 'miles', 'km'));
+            console.log(convertLength(32, 'km', 'miles'));
+            console.log(convertLength(50, 'km', 'km'));
+
+            console.log(convertLength(5, 'miles', 'km'));
+            console.log(convertLength(5, 'miles', 'ft'));
+            console.log(convertLength(5, 'km', 'ft'));
+
+            console.log(convertLength(5, 'lbs', 'lbs'));
+        </script>
+    </body>
+</html>

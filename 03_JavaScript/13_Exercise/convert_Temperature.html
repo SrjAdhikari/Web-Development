@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Temperature Converter</title>
+    </head>
+    <body>
+        <script>
+            
+            // Function to convert Celsius to Fahrenheit
+            function convertToFahrenheit(celsius){
+                // Convert Celsius to Fahrenheit using the formula (C * 9/5) + 32
+                fahrenheit = (celsius * 9 / 5) + 32;
+                // Return the Fahrenheit value
+                return fahrenheit;
+            }
+            // console.log(convertToFahrenheit(25));
+
+
+            // Function to convert Fahrenheit to Celsius
+            function convertToCelsius(fahrenheit){
+                // Convert Fahrenheit to Celsius using the formula (F - 32) * 5/9
+                celsius = (fahrenheit - 32) * 5 / 9;
+                // Return the Celsius value
+                return celsius;
+            }
+            // console.log(convertToCelsius(86));
+
+
+            // Function to convert temperature based on the unit provided
+            function convertTemperature(degrees, unit){
+
+                // If the unit is 'C' for Celsius
+                if(unit === 'C'){
+                    // Convert Celsius to Fahrenheit
+                    const result = convertToFahrenheit(degrees);
+                    // Return the result with 'F' appended to indicate Fahrenheit
+                    return `${result}F`;
+                }
+
+                // If the unit is not 'C', assume it is 'F' for Fahrenheit
+                else{ 
+                    // Convert Fahrenheit to Celsius
+                    const result = convertToCelsius(degrees);
+                    // Return the result with 'C' appended to indicate Celsius
+                    return `${result}C`;
+                }
+            }
+            console.log(convertTemperature(25, 'C'));       // Convert 25°C to Fahrenheit
+            console.log(convertTemperature(86, 'F'));       // Convert 86°F to Celsius
+
+        </script>
+    </body>
+</html>

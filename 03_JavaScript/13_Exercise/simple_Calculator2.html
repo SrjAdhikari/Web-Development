@@ -1,0 +1,131 @@
+<!--* ************************************************************************ !-->
+<!--* Create a simple calculator
+<!--* ************************************************************************ !-->
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <!--* First row of calculator buttons -->
+
+        <p>
+            <!--* Button to add '1' to the calculation -->
+            <button onclick="
+                updateCalculation('1');
+            ">1</button>
+
+            <!--* Button to add '2' to the calculation -->
+            <button onclick="
+                updateCalculation('2');
+            ">2</button>
+
+            <!--* Button to add '3' to the calculation -->
+            <button onclick="
+                updateCalculation('3');
+            ">3</button>
+
+            <!--* Button to add ' + ' to the calculation -->
+            <button onclick="
+                updateCalculation(' + ');
+            ">+</button>
+        </p>
+
+
+        <!--* Second row of calculator buttons -->
+
+        <p>
+            <!--* Button to add '4' to the calculation -->
+            <button onclick="
+                updateCalculation('4');
+            ">4</button>
+
+            <!--* Button to add '5' to the calculation -->
+            <button onclick="
+                updateCalculation('5');
+            ">5</button>
+
+            <!--* Button to add '6' to the calculation -->
+            <button onclick="
+                updateCalculation('6');
+            ">6</button>
+
+            <!--* Button to add ' - ' to the calculation -->
+            <button onclick="
+                updateCalculation(' - ');
+            ">-</button>
+        </p>
+
+
+        <!--* Third row of calculator buttons -->
+
+        <p>
+            <!--* Button to add '7' to the calculation -->
+            <button onclick="
+                updateCalculation('7');
+            ">7</button>
+
+            <!--* Button to add '8' to the calculation -->
+            <button onclick="
+                updateCalculation('8');
+            ">8</button>
+
+            <!--* Button to add '9' to the calculation -->
+            <button onclick="
+                updateCalculation('9');
+            ">9</button>
+
+            <!--* Button to add ' * ' to the calculation -->
+            <button onclick="
+                updateCalculation(' * ');
+            ">*</button>
+        </p>
+
+
+        <!--* Fourth row of calculator buttons -->
+
+        <p>
+            <!--* Button to add '0' to the calculation -->
+            <button onclick="
+                updateCalculation('0');
+            ">0</button>
+
+            <!--* Button to add '.' to the calculation -->
+            <button onclick="
+                updateCalculation('.');
+            ">.</button>
+
+            <!--* Button to evaluate the calculation -->
+            <button onclick="
+                // Note: eval() takes a string and runs it as code.
+                // Avoid using eval() in real world projects since
+                // it can potentially be given harmful code to run.
+                // Only use eval() for learning purposes.
+                calculation = eval(calculation);
+                console.log(calculation);
+            "> = </button>
+
+            <!--* Button to add ' / ' to the calculation -->
+            <button onclick="
+                updateCalculation(' / ');
+            ">/</button>
+        </p>
+
+
+        <!--* Clear button to reset the calculation -->
+
+        <p>
+            <button onclick="
+                calculation = '';
+                console.log(calculation);
+            ">Clear</button>
+        </p>
+
+        <script>
+            let calculation = '';       // Initialize calculation variable as an empty string
+            function updateCalculation(value) {
+                calculation += value;
+                console.log(calculation);
+            }
+        </script>
+    </body>
+</html>
