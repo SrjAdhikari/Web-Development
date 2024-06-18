@@ -1,0 +1,67 @@
+<!--* ***************************************************** -->
+<!--* Inline Vs Bolock Elements -->
+<!--* ***************************************************** -->
+
+<!--* Block Element -->
+    <!-- A block-level element always starts on a new line, and the browsers automatically add some space (a margin) before and after the element. They always takes up the full width available (stretches out to the left and right as far as it can). -->
+
+<!--* Here are the block-level elements in HTML : -->
+    <!-- <address> <article> <aside> <blockquote> <canvas> <dd> -->
+    <!-- <div> <dl> <dt> <fieldset> <figcaption> <figure> </figure> -->
+    <!-- <footer> <form> <h1>-<h6> <header> <hr> <li> -->
+    <!-- <main> <nav> <noscript> <ol> <p> <pre> -->
+    <!-- <section> <table> <tfoot> <ul> <video> -->
+
+<!--* Inline Element -->
+    <!-- An inline element does not start on a new line. They only takes up as much width as necessary. -->
+
+<!--* Here are the block-level elements in HTML : -->
+    <!-- <a> <abbr> <acronym> <b> <bdo> <big> -->
+    <!-- <br> <button> <cite> <code> <dfn> <em> -->
+    <!-- <i> <img> <input> <kbd> <label> <map> -->
+    <!-- <object> <output> <q> <samp> <script> <select> -->
+    <!-- <small> <span> <strong> <sub> <sup> <textarea> -->
+    <!-- <time> <tt> <var> -->
+
+<!--* The <div> element is a block-level and is often used as a container for other HTML elements -->
+<!--* The <span> element is an inline container used to mark up a part of a text, or a part of a document -->
+
+<!--* Note: An inline element cannot contain a block-level element! -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inline Vs Block Elements</title>
+    </head>
+    <body style="font-family: sans-serif">
+
+        <h1>Inline Vs Block Elements</h1>
+        <hr />
+
+        <div style="background-color: aquamarine;">
+            <p>
+                <strong>Frontend development</strong> is the development of the
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Graphical_user_interface">graphical user interface</a>of a website, through the use of <a target="_blank" href="https://en.wikipedia.org/wiki/HTML">HTML,</a> <a target="_blank" href="https://en.wikipedia.org/wiki/CSS">CSS,</a> and <a target="_blank" href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a> so that users can view and interact with that <span style="background-color: mediumspringgreen;">website</span>.
+            </p>
+            <img src="transparent-html-css-javascript.png" alt="frontend roadmap" style="width: 100%; max-width: 600px;">
+        </div>
+
+        <div style="background-color:darkcyan">
+            <p>
+                <strong>Frontend development</strong> is the development of the
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Graphical_user_interface">graphical user interface</a>of a website, through the use of <a target="_blank" href="https://en.wikipedia.org/wiki/HTML">HTML,</a> <a target="_blank" href="https://en.wikipedia.org/wiki/CSS">CSS,</a> and <a target="_blank" href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a> so that users can view and interact with that <span style="background-color: mediumspringgreen;">website</span>.
+            </p>
+            <img src="transparent-html-css-javascript.png" alt="frontend roadmap" style="width: 100%; max-width: 600px;">
+        </div>
+
+        <p style="background-color: lightgrey;">Paragraph tag is a block-level element and it takes up the full width available</p>
+        <h2 style="background-color: turquoise;">Heading tag is also a block-level element.</h2>
+
+        <b style="background-color: bisque;">Bold tag is a inline-level element and it only takes up as much width as necessary</b>
+        <i>Italic tag is also a inline-level element</i>
+
+    </body>
+</html>
