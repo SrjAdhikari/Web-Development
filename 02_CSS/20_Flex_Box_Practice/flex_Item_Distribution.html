@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box Practice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #container {
+            display: flex;
+            justify-content: start;
+        }
+
+        #container > div {
+            height: 200px;
+            width: 200px;
+            background-color: #6495ED;
+            box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            margin: .25rem;
+        }
+
+        #justifyContent {
+            margin: .5rem;
+            padding: .5rem;
+            font-size: 1rem;
+            font-weight: 550;
+            text-transform: capitalize;
+            box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
+            border: 1.5px solid black;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div><br />
+
+    <select id="justifyContent">
+        <option value="start" selected >start</option>
+        <option value="end">end</option>
+        <option value="flex-start">flex-start</option>
+        <option value="flex-end">flex-end</option>
+        <option value="center">center</option>
+        <option value="left">left</option>
+        <option value="right">right</option>
+        <option value="space-between">space-between</option>
+        <option value="space-around">space-around</option>
+        <option value="space-evenly">space-evenly</option>
+        <option value="stretch">stretch</option>
+    </select>
+
+    <script>
+        const justifyContent = document.querySelector('#justifyContent');
+        justifyContent.addEventListener('change', (event) => {
+            const container = document.querySelector('#container');
+            container.style.justifyContent = event.target.value;
+        });
+    </script>
+</body>
+</html>
