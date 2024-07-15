@@ -34,12 +34,37 @@
         lastLogInDays : ["Sunday", "Friday"]
     }
 
-    // Access object
-    console.log(userInfo.email);            // Not a good practice -> Output -> srj@gmail.com  
-    console.log(userInfo["email"]);         // Output -> srj@gmail.com -> Prefer this one
-    console.log(userInfo["full name"]);     // Output -> Suraj Adhikari
+    console.log(userInfo);      // Output -> { name: 'Suraj', 'full name': 'Suraj Adhikari', age: 25, country: 'Nepal', email: 'srj@gmail.com', isLoggedIn: false, lastLogInDays: [ 'Sunday', 'Friday' ] }
+
+    //* 1. Access object Using Dot Notation
+    console.log(userInfo.email);                // Not a good practice -> Output -> srj@gmail.com  
+    console.log(userInfo.country);              // Output -> Nepal
+    console.log(userInfo.isLoggedIn);           // Output -> Flase
+    console.log(userInfo.lastLogInDays[0]);     // Output -> Sunday
+
+    //* 2. Access object Using Bracket Notation
+    console.log(userInfo["email"]);             // Output -> srj@gmail.com -> Prefer this one
+    console.log(userInfo["full name"]);         // Output -> Suraj Adhikari
+    console.log(userInfo['country']);           // Output -> Nepal
+    console.log(userInfo['lastLogInDays'][1]);  // Output -> Friday
 
 
+//* ************************** Update Object ****************************
+    //* 1. Adding items in object
+    userInfo.hobby = 'Coding';
+    userInfo.favColor = 'black';        // Adding item using dot notation
+    userInfo['state'] = 'Pokhara';      // Adding item using bracket notation
+
+    console.log(userInfo);              // Output -> { name: 'Suraj', 'full name': 'Suraj Adhikari', age: 25,country: 'Nepal', email: 'srj@gmail.com', isLoggedIn: false, lastLogInDays: [ 'Sunday', 'Friday' ],hobby: 'Coding', favColor: 'black', state: 'Pokhara' }
+
+    //* 2. Removing / Deleting items from objects
+    delete userInfo.age;
+    delete userInfo.country;        // Deleting item using dot notation
+    delete userInfo['email'];       // Deleting item using bracket notation
+
+    console.log(userInfo);          // Output -> { name: 'Suraj', 'full name': 'Suraj Adhikari', isLoggedIn: false, lastLogInDays: [ 'Sunday', 'Friday' ], hobby: 'Coding', favColor: 'black', state: 'Pokhara' }
+
+    
 //* **************** Add Symbol in object as keys and print ***************
     // Create symbol
     const mySymbol = Symbol("key1");
