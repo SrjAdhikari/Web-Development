@@ -105,15 +105,127 @@
     //* The Object.freeze() method -> Freezes an object. Freezing an object prevents extensions and makes existing properties non-writable and non-configurable.
     //* Syntax -> Object.freeze(obj)
 
-    userInfo1. email = "srj1234@gmail.com";
+    //* Characteristics:
+    //* No Addition: You cannot add new properties.
+    //* No Deletion: You cannot remove existing properties.
+    //* No Modification: You cannot change the values of existing properties.
+    //* No Reconfiguration: You cannot change the property descriptors (e.g., writable, configurable).
 
-    //Object.freeze(userInfo1);
-    userInfo1.email = "srj111@gmail.com";
+
+    //* Example: 1
+    const userInfo2 = {
+        name : "Srj",
+        "full name" : "Srj Adhikari",
+        age : 20,
+        country : "Japan",
+        email : "srj11@gmail.com",
+        isLoggedIn : false,
+        lastLogInDays : ["Monday", "Sunday"]
+    }
+
+    userInfo1. email = "srj1234@gmail.com";     // Update email address
+
+    Object.freeze(userInfo1);                   // Freeze the userInfo1 object
+    userInfo1.email = "srj111@gmail.com";       // Trying to update email after freeze the object -> This will not work, can't update email
 
     console.log(userInfo1);
     console.log(userInfo1.email);       // Output -> suraj1234@gmail.com  => email is not overwritten from suraj1234@gmail.com to srj111@gmail.com
+
+
+    //* Example: 2
+    let person = {
+        firstName: "John",
+        lastName: "Doe"
+    };
+    
+    Object.freeze(person);          // Freeze the person object
+    
+    person.firstName = "Jane";      // This will not work
+    delete person.lastName;         // This will not work
+    person.age = 30;                // This will not work
+    
+    console.log(person);            // Output: { firstName: "John", lastName: "Doe" }
+
+
+    //* Example: 3
+    let book = {
+        title: "JavaScript: The Good Parts",
+        author: "Douglas Crockford",
+        year: 2008
+    };
+    
+    Object.freeze(book);        // Freeze the book object
+    
+    // Trying to modify the properties
+    book.title = "JavaScript: The Better Parts";    // This will not work
+    book.year = 2021;                               // This will not work
+    
+    // Trying to add new properties
+    book.publisher = "O'Reilly Media";              // This will not work
+    
+    // Trying to delete properties
+    delete book.author;                             // This will not work
+    
+    console.log(book);      // Output: { title: "JavaScript: The Good Parts", author: "Douglas Crockford", year: 2008 }
+    
+    // Checking if the object is frozen
+    console.log(Object.isFrozen(book));     // true
+    console.log(Object.isSealed(book));     // true (a frozen object is also sealed)
+    
     //* ****************************************************************************
 
+
+    //* ****************************************************************************
+    //* The Object.seal() method -> Seals an object. Preventing new properties from being added and marking all existing properties as non-configurable. However, unlike Object.freeze(), it still allows modifying the values of existing properties.
+    //* Syntax -> Object.seal(obj)
+
+    //* Characteristics:
+    //* No Addition: You cannot add new properties.
+    //* No Deletion: You cannot remove existing properties.
+    //* Modification Allowed: You can change the values of existing properties.
+    //* No Reconfiguration: You cannot change the property descriptors (e.g., writable, configurable).
+
+
+    //* Example: 1
+    let car = {
+        brand: "Toyota",
+        model: "Camry"
+    };
+    
+    Object.seal(car);       // Seal the book object
+    
+    car.brand = "Honda";    // This will work
+    delete car.model;       // This will not work
+    car.year = 2020;        // This will not work
+    
+    console.log(car);       // Output: { brand: "Honda", model: "Camry" }
+    
+
+    //* Example: 2
+    let car1 = {
+        make: "Toyota",
+        model: "Corolla",
+        year: 2020
+    };
+    
+    Object.seal(car1);           // Seal the car1 object
+    
+    // Modifying existing properties
+    car1.year = 2021;            // This will work
+    
+    // Trying to add new properties
+    car1.color = "blue";         // This will not work
+    
+    // Trying to delete properties
+    delete car1.model;           // This will not work
+    
+    console.log(car1);           // Output: { make: "Toyota", model: "Corolla", year: 2021 }
+    
+    // Checking if the object is sealed
+    console.log(Object.isSealed(car1));     // true
+    console.log(Object.isFrozen(car1));     // false
+    
+    //* ****************************************************************************
 
     // Add function in object
     userInfo1.greeting = function(){
@@ -126,4 +238,4 @@
 
     console.log(userInfo1.greeting);        // Output -> [Function (anonymous)] => Reference of function
     console.log(userInfo1.greeting());      // Output -> Hello user
-    console.log(userInfo1.greeting1());      // Output -> Hello, Srj
+    console.log(userInfo1.greeting1());     // Output -> Hello, Srj
