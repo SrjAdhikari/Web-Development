@@ -4,7 +4,12 @@
 
 
 //* ******************************** Defination ******************************
-    //* TThe Object type represents one of JavaScript's data types. It is used to store various keyed collections and more complex entities. Objects can be created using the Object() constructor or the object initializer / literal syntax.
+    //* The Object type represents one of JavaScript's data types. It is used to store various keyed collections and more complex entities. Objects can be created using the Object() constructor or the object initializer / literal syntax.
+
+    //* Structure:
+        //* 1. An object consists of key-value pairs.
+        //* 2. Keys are unique identifiers used to access the corresponding values. Keys can be strings or symbols (rarely numbers, though technically possible).
+        //* 3. Values can be any valid JavaScript data type like strings, numbers, booleans, arrays, or even other objects (nested objects).
 //* *************************************************************************
 
 
@@ -59,10 +64,10 @@
 
     //* 2. Removing / Deleting items from objects
     delete userInfo.age;
-    delete userInfo.country;        // Deleting item using dot notation
-    delete userInfo['email'];       // Deleting item using bracket notation
+    delete userInfo.country;            // Deleting item using dot notation
+    delete userInfo['email'];           // Deleting item using bracket notation
 
-    console.log(userInfo);          // Output -> { name: 'Suraj', 'full name': 'Suraj Adhikari', isLoggedIn: false, lastLogInDays: [ 'Sunday', 'Friday' ], hobby: 'Coding', favColor: 'black', state: 'Pokhara' }
+    console.log(userInfo);              // Output -> { name: 'Suraj', 'full name': 'Suraj Adhikari', isLoggedIn: false, lastLogInDays: [ 'Sunday', 'Friday' ], hobby: 'Coding', favColor: 'black', state: 'Pokhara' }
 
     
 //* **************** Add Symbol in object as keys and print ***************
