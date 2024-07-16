@@ -64,10 +64,10 @@
     const array1 = [1, 2, 3];
 
     array.unshift(4);
-    console.log(array);             // Output -> [ 4, 1, 2, 4, 5, 6 ]
+    console.log(array);             // Output -> [ 4, 1, 2, 3 ]
 
     array.unshift(10, 20);
-    console.log(array);             // Output -> [ 10, 20, 4, 1, 2, 4, 5, 6 ]
+    console.log(array);             // Output -> [ 10, 20, 4, 1, 2, 3 ]
 
 
     //* ****************************************************************************
