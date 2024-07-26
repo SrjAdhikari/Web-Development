@@ -8,32 +8,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create New Element In DOM</title>
+    <style>
+        .container {
+            color: green;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        img {
+            width: 60px;
+        }
+
+        .img-container {
+        text-align: center; 
+        }
+
+        .img-container p {
+            margin: 0;
+        }
+    </style>
 </head>
 <body style="background-color: #212121; color: #fff;">
-<script>
+    <h1>document.createElement()</h1>
+    <div class="container">
+        <!-- <div class="img-container">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="">
+            <p>1</p>
+        </div> -->
+    </div>
+    <br>
 
-    // Create New Element In DOM
-    
-    // Create "div" element
-    const div = document.createElement("div")
-    console.log(div);
+    <script>
 
-    // Add attribute in div element
-    div.className = "main"  // Set class
-    div.id = "myId"         // Set id
-    div.setAttribute("title", "generated title")    // Set title
+        //* ***************** Create New Element In DOM *****************
+        
+        // Create "div" element
+        const div = document.createElement("div")
+        console.log(div);
 
-    // Add style property in div element
-    div.style.backgroundColor = "green"
-    div.style.padding = "12px"
-    div.style.padding = "12px"
-    // div.innerText = "Chai aur code"
-    const addText = document.createTextNode("Chai aur code")
-    div.appendChild(addText)
+        // Add attribute in div element
+        div.className = "main"  // Set class
+        div.id = "myId"         // Set id
+        div.setAttribute("title", "generated title")    // Set title
 
-    // Attach div on document
-    document.body.appendChild(div)
+        // Add style property in div element
+        div.style.backgroundColor = "green"
+        div.style.padding = "12px"
+        div.style.padding = "12px"
+        // div.innerText = "Chai aur code"
+        const addText = document.createTextNode("Chai aur code")
+        div.appendChild(addText)
 
-</script>
+        // Attach div on document
+        document.body.appendChild(div)
+
+
+        // *************************************************************
+
+        // Select the container elements
+        const container = document.querySelector(".container");
+
+        /*
+        // Create "div" element
+        const imgContainer = document.createElement("div");
+        imgContainer.classList.add("img-container");
+
+        // Create "img" element
+        const image = document.createElement("img");
+        image.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png`
+
+        // Create "paragraph" element
+        const paragraph = document.createElement("p");
+        paragraph.innerText = 1;
+
+        //* Append elements to imgContainer and then to the main container
+        imgContainer.append(image, paragraph);
+        container.append(imgContainer);
+        */
+
+
+        // *************************************************************
+
+        // Loop to create and display 100 Pokémon images and numbers
+        for(let i = 1; i <=100; i++) {
+            // Create a new imgContainer element for each Pokémon and add class
+            const imgContainer = document.createElement("div");
+            imgContainer.classList.add("img-container");
+
+            // Create a new image element for each Pokémon
+            const image = document.createElement("img");
+            // Update the image source dynamically using string interpolation
+            image.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png`
+
+            // Create a new paragraph element for each Pokémon number
+            const paragraph = document.createElement("p");
+            // Set the text to the current loop iteration
+            paragraph.innerText = i;
+
+            //* Append elements to imgContainer and then to the main container
+            imgContainer.append(image, paragraph);
+            container.append(imgContainer);
+        }
+
+
+        // *************************************************************
+
+        /*
+        // Different method to do the same things as above
+
+        let myHTML = ``;
+        for(let i = 1; i <= 100; i++) {
+            myHTML += `
+                <div class="img-container">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png" alt="">
+                    <p>${i}</p>
+                </div>
+            `
+        }
+
+        container.innerHTML = myHTML;
+        */
+    </script>
 </body>
 </html>
