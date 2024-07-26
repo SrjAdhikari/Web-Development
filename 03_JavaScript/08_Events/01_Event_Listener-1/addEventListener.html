@@ -1,0 +1,53 @@
+<!--* **************************************************** -->
+<!--* Events -->
+<!--* **************************************************** -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Event</title>
+    <style>
+        .container {
+            color: #000;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .card {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            background-color: rgb(90, 226, 183);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="font-family: cursive;">
+    <h1>Adding Event Listeners</h1>
+    <p>When the initial card with the class "card" is clicked, a new card is created, given the same "card" class, labeled with a counter, and appended to the container. Each click creates a new card with an incremented label.</p>
+    <div class="container">
+        <div class="card" title="Add New Card">+</div>
+    </div>
+
+    <script>
+        const container = document.querySelector(".container");     //* Select the container element
+        let cardCount = 1;                                          //* Initialize a counter for the cards
+
+        const card = document.querySelector(".card");               //* Select the initial card element
+        card.addEventListener("click", () => {                      //* Add a click event listener to the card
+            const newCard = document.createElement("div");          //* Create a new card element
+            newCard.classList.add("card");                          //* Add the "card" class to the new card element
+            newCard.innerText = cardCount;                          //* Set the text of the new card to the current count
+            cardCount++;                                            //* Increment the card counter
+            container.append(newCard);                              //* Append the new card to the container
+        });
+    </script>
+</body>
+</html>
