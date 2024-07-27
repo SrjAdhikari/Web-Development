@@ -4,7 +4,7 @@ const errorMsg = document.querySelector(".error-msg");
 const progressBar = document.querySelector(".progress-bar");
 const progressValue  = document.querySelector(".progress-indicator");
 
-let isAllGoalsFilled = flase;
+let isAllGoalsFilled = false;
 
 checkBoxList.forEach((checkbox) => {
     checkbox.addEventListener("click", (e) => {
