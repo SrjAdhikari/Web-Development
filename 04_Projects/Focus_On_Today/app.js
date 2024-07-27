@@ -2,7 +2,9 @@ const checkBoxList = document.querySelectorAll(".custom-checkbox");
 const inputFields = document.querySelectorAll(".goal-input");
 const errorMsg = document.querySelector(".error-msg");
 const progressBar = document.querySelector(".progress-bar");
-const progressVlaue = document.querySelector(".progress-indicator");
+const progressValue  = document.querySelector(".progress-indicator");
+
+let isAllGoalsFilled = flase;
 
 checkBoxList.forEach((checkbox) => {
     checkbox.addEventListener("click", (e) => {
