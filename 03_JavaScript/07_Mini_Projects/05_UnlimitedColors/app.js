@@ -15,12 +15,12 @@ const randomColor = function () {
 
     // Return the generated color.
     return color;
-  };
+};
 
-  
+
 // Variable to store the interval ID.
 let intervalId;
-  
+
 // Function to start changing the background color at regular intervals.
 const startChangingColor = function () {
 
@@ -47,9 +47,9 @@ const stopChangingColor = function () {
     // Reset the interval ID to null.
     intervalId = null;
 };
-  
+
 // Add a click event listener to the element with the ID 'start' to start changing the background color.
 document.querySelector('#start').addEventListener('click', startChangingColor);
-  
+
 // Add a click event listener to the element with the ID 'stop' to stop changing the background color.
 document.querySelector('#stop').addEventListener('click', stopChangingColor);
