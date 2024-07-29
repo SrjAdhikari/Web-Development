@@ -46,25 +46,28 @@ const putBeefBetweenBuns = (buns, cookedBeef, callback) => {
 };
 
 // Function to make a burger using callbacks
-const makeBurger = (nextStep) => {
-    getBeef((beef) => {                         // Step 1: Get the beef
-        cookBeef(beef, (cookedBeef) => {        // Step 2: Cook the beef once the beef is obtained
-            getBuns((buns) => {                 // Step 3: Get buns once the beef is cooked
-                // Step 4: Put the cooked beef between the buns once the buns are obtained
-                putBeefBetweenBuns(buns, cookedBeef, (burger) => {
-                    nextStep(burger);           // Step 5: // Once the burger is assembled, Call the nextStep callback with the final burger
+const makeBurger = () => {
+    getBeef((beef) => {                                                 // Step 1: Get the beef
+        cookBeef(beef, (cookedBeef) => {                                // Step 2: Cook the beef once the beef is obtained
+            getBuns((buns) => {                                         // Step 3: Get buns once the beef is cooked
+                putBeefBetweenBuns(buns, cookedBeef, (burger) => {      // Step 4: Put the cooked beef between the buns once the buns are obtained
+                    //nextStep(burger);                                 // Step 5: Once the burger is assembled, Call the nextStep callback with the final burger
+                    console.log(`Burger is ready : ${burger}`);
                 });
             });
         });
     });
 };
 
-// Call makeBurger and log the final result
-makeBurger((burger) => console.log(`Burger is ready: ${burger}`));
+// makeBurger((burger) => console.log(`Burger is ready: ${burger}`));   // Call makeBurger and log the final result
+makeBurger();                                                           // Call makeBurger
+
+
+//* ****************************************************
 //* Explanation of Callback Hell:
+//* ****************************************************
 
 //* Callback Hell occurs when multiple asynchronous operations are nested inside each other, leading to deeply nested callback functions. This results in code that is harder to read and maintain. In this code, callback hell is formed as follows:
-
 //* Each asynchronous function (getBeef, cookBeef, getBuns, putBeefBetweenBuns) calls its callback function after completing its task. This results in nested callbacks:
 
 // getBeef((beef) => {
