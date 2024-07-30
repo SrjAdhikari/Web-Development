@@ -4,9 +4,9 @@
 
 
 //* *********************** Dates ***********************
-const myDate = new Date();          // Create a new Date object representing the current date and time
-console.log(myDate);                // Output -> The output will be current date and time
-console.log(typeof myDate)          // Output -> object
+const myDate = new Date();                          // Create a new Date object representing the current date and time
+console.log(myDate);                                // Output -> The output will be current date and time
+console.log(typeof myDate)                          // Output -> object
 
 
 //* ********************* Date Methods ******************
