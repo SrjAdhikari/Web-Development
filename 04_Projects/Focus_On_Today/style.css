@@ -71,10 +71,12 @@ main {
     display: flex;
     align-items: center;
     overflow: hidden;
+    transition: width 0.5s ease;
 }
 
 .progress-indicator span {
     padding-left: 20px;
+    min-width: max-content;
 }
 /* ********************* Progress Bar Style End Here ************* */
 
